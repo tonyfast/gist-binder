@@ -1,3 +1,21 @@
+name: gist-binder
+channels:
+  - defaults
+  - conda-forge
+  - damianavila82
 dependencies:
-- pip:
-  - git+https://github.com/tonyfast/literacy
+  - ipywebrtc ==0.3.0
+  - ipywidgets >=7.0.1,<8
+  - jupyterlab ==0.28.12
+  - lxml
+  - nodejs
+  - pandas
+  - python >=3.6.3,<3.7
+  - scikit-learn
+  - toolz
+  - tqdm
+  - openjdk >=8.0.144,<9
+  - rise
+  - pip:
+    - git+https://github.com/tonyfast/articles
+    - git+https://github.com/tonyfast/literacy
