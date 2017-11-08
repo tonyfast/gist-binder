@@ -18,18 +18,16 @@ RUN jupyter lab build
 
 COPY ./labextensions/* /home/jovyan/labextensions/
 
-RUN set -ex && \
-  jupyter labextension install @jupyter-widgets/jupyterlab-manager --no-build && \
-  jupyter labextension install file:///home/jovyan/labextensions/jupyter-webrtc-jupyterlab-0.1.0.tgz && \
-  jupyter labextension list
+
+RUN wget https://gist.githubusercontent.com/tonyfast/f95820ae08d137dac884e996a63b78b3/raw/literate-presentations.ipynb
+
+# RUN set -ex && \
+#  jupyter labextension install @jupyter-widgets/jupyterlab-manager --no-build && \
+#  jupyter labextension install file:///home/jovyan/labextensions/jupyter-webrtc-jupyterlab-0.1.0.tgz && \
+#  jupyter labextension list
 
 # copy and reown the files
 COPY . ${HOME}
 USER root
 RUN chown -R ${NB_UID} ${HOME}
 USER ${NB_USER}
-
-RUN wget https://gist.githubusercontent.com/tonyfast/f95820ae08d137dac884e996a63b78b3/raw/literate-presentations.ipynb
-
-# finally, prepare our stuff
-RUN python setup.py develop
