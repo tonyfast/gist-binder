@@ -2,7 +2,6 @@ name: gist-binder
 channels:
   - defaults
   - conda-forge
-  - damianavila82
 dependencies:
   - ipywebrtc ==0.3.0
   - ipywidgets >=7.0.1,<8
@@ -15,7 +14,8 @@ dependencies:
   - toolz
   - tqdm
   - openjdk >=8.0.144,<9
-  - rise
+
   - pip:
     - git+https://github.com/tonyfast/articles
     - git+https://github.com/tonyfast/literacy
+    - rise
