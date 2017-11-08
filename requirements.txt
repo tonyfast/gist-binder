@@ -1,0 +1,3 @@
+notebook
+pandas
+git+https://github.com/tonyfast/literacy
